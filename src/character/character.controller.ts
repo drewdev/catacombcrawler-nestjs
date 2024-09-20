@@ -11,7 +11,7 @@ export class CharacterController {
     return this.characterService.findAll();
   }
 
-  @Post()
+  @Post('create')
   createCharacter(@Body() characterData: Character): Promise<Character> {
     return this.characterService.createCharacter(characterData);
   }

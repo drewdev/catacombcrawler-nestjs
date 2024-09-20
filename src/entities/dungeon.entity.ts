@@ -15,5 +15,5 @@ export class Dungeon {
   cleared: boolean;
 
   @Column('simple-array')
-  encounters: string[];  // Los encuentros pueden ser objetos o descripciones
+  encounters: string[];
 }

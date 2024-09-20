@@ -15,13 +15,6 @@ export class Character {
   health: number;
 
   @Column({ type: 'simple-json' })
-  stats: {
-    strength: number;
-    agility: number;
-    intelligence: number;
-  };
-
-  @Column({ type: 'simple-json' })
   inventory: {
     weapon: {
       attack: number;

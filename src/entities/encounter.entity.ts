@@ -6,11 +6,11 @@ export class Encounter {
   id: number;
 
   @Column({ length: 100 })
-  type: string;  // Puede ser "Enemy", "Treasure", etc.
+  type: string;
 
   @Column('text')
   description: string;
 
   @Column()
-  difficulty: number;  // La dificultad de este encuentro
+  difficulty: number;
 }
