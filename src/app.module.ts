@@ -16,14 +16,17 @@ import { Encounter } from './entities/encounter.entity';
     CombatModule,
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: 'localhost',
-      port: 5432,
-      username: 'postgres',
-      password: '6969',
-      database: 'catacomb_crawler',
+      host: process.env.PGHOST,
+      port: parseInt(process.env.PGPORT, 10) || 5432,
+      username: process.env.PGUSER,
+      password: process.env.PGPASSWORD,
+      database: process.env.PGDATABASE,
       entities: [Character, Dungeon, Encounter],
       synchronize: true,
-    }),
+      ssl: {
+        rejectUnauthorized: false,
+      }
+    }),    
     TypeOrmModule.forFeature([Character, Dungeon, Encounter]),
   ],
   controllers: [AppController],
